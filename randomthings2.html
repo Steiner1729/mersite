@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap');
+        *{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: "Poppins", sans-serif;
+        }
+        /* .wrapper {
+            max-width: 1100px;
+            width: 100%;
+            position: relative;
+        } */
+        .wrapper i {
+            top: 50%;
+            height: 50px;
+            width: 50px;
+            cursor: pointer;
+            font-size: 1.25rem;
+            position: absolute;
+            text-align: center;
+            line-height: 50px;
+            background: #fff;
+            border-radius: 50%;
+            box-shadow: 0 3px 6px rgba(0,0,0,0.23);
+            transform: translateY(-50%);
+            transition: transform 0.1s linear;
+        }
+        .wrapper i:active{
+            transform: translateY(-50%) scale(0.85);
+        }
+        .wrapper i:first-child{
+            left: -22px;
+        }
+        .wrapper i:last-child{
+            right: -22px;
+        }
+        .wrapper .carousel{
+            display: grid;
+            grid-auto-flow: column;
+            grid-auto-columns: calc((100% / 3) - 12px);
+            overflow-x: auto;
+            scroll-snap-type: x mandatory;
+            gap: 16px;
+            border-radius: 8px;
+            scroll-behavior: smooth;
+            scrollbar-width: none;
+        }
+        .carousel.no-transition {
+            scroll-behavior: auto;
+        }
+        .carousel.dragging {
+            scroll-snap-type: none;
+            scroll-behavior: auto;
+        }
+        .carousel.dragging .card {
+            cursor: grab;
+            user-select: none;
+        }
+        .carousel :where(.card, .img){
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-direction: column;
+        }
+        .card .img{
+            background: #8B53FF;
+            width: 148px;
+        }
+        .card .img img{
+            width: 140px;
+            object-fit: cover;
+            border : 4px solid #fff
+        }
+        body{
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            min-height: 100vh;
+            padding: 0 35px;
+            background: linear-gradient(to left top, #031A9A, #8B53FF);
+
+        }
+        /* .wrapper{
+            /* max-width: 1100px;
+            width: 100%;
+        }
+         */
+        .wrapper .carousel{
+            display: grid;
+            grid-auto-flow: column;
+            grid-auto-columns: calc((100% / 3) - 152px);
+            gap: 16px;
+            /* overflow: hidden; */
+        }
+        .carousel .card{
+            height: 342px;
+            list-style: none;
+            background: #fff;
+            border-radius: 8px;
+            display: flex;
+            padding-bottom: 15px;
+            align-items: center;
+            justify-content: center;
+            flex-direction: column;
+
+        }
+    </style>
+</head>
+<body>
+    <div class="wrapper">
+        <ul class="carousel">
+            <li class="card">
+                <h2>Strawberry Whispers in Shades of Purple</h2>
+                <span>In hues of purple, love's sweet embrace,<br>
+                    I find solace in your tender grace. <br>
+                    Like strawberries, ripe and oh so rare, <br>
+                    Our bond grows sweeter, beyond compare. <br><br>
+                    
+                    Through fragrant gardens, hand in hand,<br>
+                    We stroll, love's symphony at command. <br>
+                    With each soft whisper and gentle touch, <br>
+                    Our love blossoms, growing oh so much. <br>
+                    
+                    In twilight's glow, a purple haze, <br>
+                    Our hearts entwined in love's ballet. <br>
+                    Like strawberries dipped in sugar's delight, <br>
+                    Our love's flavor lingers, day and night. <br>
+                    
+                    So, on this day, your special mirth, <br>
+                    I gift you love and all its worth. <br>
+                    With every breath, my heart shall say, <br>
+                    Happy birthday, my love, in the sweetest way. <br></span>
+            </li>
+            <li class="card">
+                <div class="img"><img src="https://images-na.ssl-images-amazon.com/images/I/91hGhDrj-yL._AC_UL600_SR600,600_.jpg" alt="img"></div>
+                <h2>Fragile Petals, Enduring Love</h2>
+                <span>In shadows cast, my heart now breaks. <br>
+                    A love once strong, but now it aches. <br>
+                    Though parted ways, my love remains,<br>
+                    With each heartbeat, the pain sustains. <br>
+                    
+                    Through memories, like whispers past,<br>
+                    I cling to moments that didn't last. <br>
+                    In dreams, I see your gentle smile,<br>
+                    Yet reality, a bitter trial. <br>
+                    
+                    But on this day, your birth anew,<br>
+                    I send my love, so pure and true. <br>
+                    Though separate paths our lives may take,<br>
+                    In my heart, your love won't forsake. <br>
+                    
+                    May happiness adorn your way,<br>
+                    And joy be with you, day by day. <br>
+                    Though we're apart, my love will stay,<br>
+                    Happy birthday, my love, I pray. <br></span>
+        </ul>
+    </div>
+
+
+
+
+    <script>
+        const wrapper = document.querySelector(".wrapper");
+const carousel = document.querySelector(".carousel");
+const firstCardWidth = carousel.querySelector(".card").offsetWidth;
+const arrowBtns = document.querySelectorAll(".wrapper i");
+const carouselChildrens = [...carousel.children];
+let isDragging = false, isAutoPlay = true, startX, startScrollLeft, timeoutId;
+// Get the number of cards that can fit in the carousel at once
+let cardPerView = Math.round(carousel.offsetWidth / firstCardWidth);
+// Insert copies of the last few cards to beginning of carousel for infinite scrolling
+carouselChildrens.slice(-cardPerView).reverse().forEach(card => {
+    carousel.insertAdjacentHTML("afterbegin", card.outerHTML);
+});
+// Insert copies of the first few cards to end of carousel for infinite scrolling
+carouselChildrens.slice(0, cardPerView).forEach(card => {
+    carousel.insertAdjacentHTML("beforeend", card.outerHTML);
+});
+// Scroll the carousel at appropriate postition to hide first few duplicate cards on Firefox
+carousel.classList.add("no-transition");
+carousel.scrollLeft = carousel.offsetWidth;
+carousel.classList.remove("no-transition");
+// Add event listeners for the arrow buttons to scroll the carousel left and right
+arrowBtns.forEach(btn => {
+    btn.addEventListener("click", () => {
+        carousel.scrollLeft += btn.id == "left" ? -firstCardWidth : firstCardWidth;
+    });
+});
+const dragStart = (e) => {
+    isDragging = true;
+    carousel.classList.add("dragging");
+    // Records the initial cursor and scroll position of the carousel
+    startX = e.pageX;
+    startScrollLeft = carousel.scrollLeft;
+}
+const dragging = (e) => {
+    if(!isDragging) return; // if isDragging is false return from here
+    // Updates the scroll position of the carousel based on the cursor movement
+    carousel.scrollLeft = startScrollLeft - (e.pageX - startX);
+}
+const dragStop = () => {
+    isDragging = false;
+    carousel.classList.remove("dragging");
+}
+const infiniteScroll = () => {
+    // If the carousel is at the beginning, scroll to the end
+    if(carousel.scrollLeft === 0) {
+        carousel.classList.add("no-transition");
+        carousel.scrollLeft = carousel.scrollWidth - (2 * carousel.offsetWidth);
+        carousel.classList.remove("no-transition");
+    }
+    // If the carousel is at the end, scroll to the beginning
+    else if(Math.ceil(carousel.scrollLeft) === carousel.scrollWidth - carousel.offsetWidth) {
+        carousel.classList.add("no-transition");
+        carousel.scrollLeft = carousel.offsetWidth;
+        carousel.classList.remove("no-transition");
+    }
+    // Clear existing timeout & start autoplay if mouse is not hovering over carousel
+    clearTimeout(timeoutId);
+    if(!wrapper.matches(":hover")) autoPlay();
+}
+const autoPlay = () => {
+    if(window.innerWidth < 800 || !isAutoPlay) return; // Return if window is smaller than 800 or isAutoPlay is false
+    // Autoplay the carousel after every 2500 ms
+    timeoutId = setTimeout(() => carousel.scrollLeft += firstCardWidth, 2500);
+}
+autoPlay();
+carousel.addEventListener("mousedown", dragStart);
+carousel.addEventListener("mousemove", dragging);
+document.addEventListener("mouseup", dragStop);
+carousel.addEventListener("scroll", infiniteScroll);
+wrapper.addEventListener("mouseenter", () => clearTimeout(timeoutId));
+wrapper.addEventListener("mouseleave", autoPlay);
+    </script>
+</body>
+</html>

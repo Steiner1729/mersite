@@ -1,0 +1,284 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+        <style>
+                    /* *{
+            margin: 0%;
+            padding: 0%;
+        } */
+        
+            .topbubble{
+            /* display: flex; */
+            background: aqua;
+            padding: 10px 20px;
+            /*width: 100%;
+            height: 100%; */
+            text-align: center;
+            font-size: 25px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-family: cursive;
+            color: #E0115F;
+        }
+        .title1{
+            display: none;
+        }
+
+        .topbubble:hover .title1{
+            display: contents;
+        }
+        .topbubble:hover .title2{
+            display: none;
+        }
+        .topbubble img{
+            width: 150px;
+        }
+            @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap');
+            *{
+                margin: 0;
+                padding: 0;
+                box-sizing: border-box;
+                font-family: "Poppins", sans-serif;
+            }
+            /* .wrapper {
+                max-width: 1100px;
+                width: 100%;
+                position: relative;
+            } */
+            .wrapper i {
+                top: 50%;
+                height: 50px;
+                width: 50px;
+                cursor: pointer;
+                font-size: 1.25rem;
+                position: absolute;
+                text-align: center;
+                line-height: 50px;
+                background: #fff;
+                border-radius: 50%;
+                box-shadow: 0 3px 6px rgba(0,0,0,0.23);
+                transform: translateY(-50%);
+                transition: transform 0.1s linear;
+            }
+            .wrapper i:active{
+                transform: translateY(-50%) scale(0.85);
+            }
+            .wrapper i:first-child{
+                left: -22px;
+            }
+            .wrapper i:last-child{
+                right: -22px;
+            }
+            .wrapper .carousel{
+                display: grid;
+                grid-auto-flow: column;
+                grid-auto-columns: calc((100% / 3) - 12px);
+                overflow-x: auto;
+                scroll-snap-type: x mandatory;
+                gap: 16px;
+                border-radius: 8px;
+                scroll-behavior: smooth;
+                scrollbar-width: none;
+            }
+            .carousel.no-transition {
+                scroll-behavior: auto;
+            }
+            .carousel.dragging {
+                scroll-snap-type: none;
+                scroll-behavior: auto;
+            }
+            .carousel.dragging .card {
+                cursor: grab;
+                user-select: none;
+            }
+            .carousel :where(.card, .img){
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                flex-direction: column;
+            }
+            .card .img{
+                background: #8B53FF;
+                width: 148px;
+            }
+            .card .img img{
+                width: 140px;
+                object-fit: cover;
+                border : 4px solid #fff
+            }
+            body{
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                min-height: 100vh;
+                padding: 0 35px;
+                background: linear-gradient(to left top, #031A9A, #8B53FF);
+    
+            }
+            /* .wrapper{
+                /* max-width: 1100px;
+                width: 100%;
+            }
+             */
+            .wrapper .carousel{
+                display: grid;
+                grid-auto-flow: column;
+                grid-auto-columns: calc((100% / 3) - 152px);
+                gap: 16px;
+                /* overflow: hidden; */
+            }
+            .carousel .card{
+                height: 342px;
+                list-style: none;
+                background: #fff;
+                border-radius: 8px;
+                display: flex;
+                padding-bottom: 15px;
+                align-items: center;
+                justify-content: center;
+                flex-direction: column;
+    
+            }
+        </style>
+</head>
+<body>
+    <div class="middle">
+        <div class="topbubble">
+            <img src="https://media.tenor.com/lfYGrPJlQLAAAAAd/oshi-no-ko-ruby.gif" alt="dance-gif">
+            <h2 class="title1">お誕生日おめでとう、Merさん</h2>
+            <h2 class="title2">Happy Birthday Merri</h2>
+            <img src="https://media.tenor.com/lfYGrPJlQLAAAAAd/oshi-no-ko-ruby.gif" alt="dance-gif">
+        </div>
+        <!-- <div class="merfavanime">
+            <h3>Mer's favorite anime</h3>
+        </div> -->
+        <div class="wrapper">
+            <ul class="carousel">
+                <li class="card">
+                    <div class="img"><img src="https://m.media-amazon.com/images/I/71OsLUJkXjL._AC_SL1500_.jpg" alt="img"><a href="https://animesuge.to/anime/bocchi-the-rock-1pyp/ep-1"></a></div>
+                    <h2>Bocchi The Rock</h2>
+                    <span>Extremely anxious and socially awkward Hitori Gotō longs to become a rock musician in spite of her struggles, whilst fulfilling her desires to one day make friends. She is suddenly given a chance to do so after she is taken in by Nijika Ijichi to become a member of her newly formed Kessoku Band.</span>
+                </li>
+                <li class="card">
+                    <div class="img"><img src="https://images-na.ssl-images-amazon.com/images/I/91hGhDrj-yL._AC_UL600_SR600,600_.jpg" alt="img"><a href="https://animesuge.to/anime/bungo-stray-dogs-3rrx2/ep-1"></a></div>
+                    <h2>Bungou Stray Dogs</h2>
+                    <span>Nakajima Atsushi was kicked out of his orphanage, and now he has no place to go and no food. While he is standing by a river, on the brink of starvation, he rescues a man who whimsically attempting suicide. That man is Dazai Osamu, and he and his partner Kunikida are members of a very special detective agency. They have supernatural powers and deal with cases that are too dangerous for the police or the military. They're tracking down a tiger that has appeared in the area recently, around the time Atsushi came to the area. The tiger seems to have a connection to Atsushi, and by the time the case is solved, it is clear that Atsushi's future will involve much more of Dazai and the rest of the detectives!</span>
+                </li>
+                <li class="card">
+                    <div class="img"><img src="https://m.media-amazon.com/images/M/MV5BYTgxZjNlZWQtYjg1OS00NzY2LTkyZTctZDBkY2Y2ZWEyMjNlXkEyXkFqcGdeQXVyMzgxODM4NjM@._V1_FMjpg_UX1000_.jpg" alt="img"><a href="https://animesuge.to/anime/oshi-no-ko2-4q1jm/ep-1"></a></div>
+                    <h2>Oshi No Ko</h2>
+                    <span>Gynecologist Gorou Amemiya is tasked with helping deliver the children of Ai Hoshino, a Japanese idol whom he admires, without the knowledge of the general public. However, the night of Ai's delivery, Gorou is murdered by an obsessive fan of Ai's, and is reincarnated as Aquamarine "Aqua" Hoshino, Ai's son, retaining his memories of his previous life. Aqua's fraternal twin, Ruby Hoshino, is also a reincarnation, though she refuses to admit her original identity as one of Gorou's patients who got him interested in Ai in the first place. Four years later, Ai is murdered by the same obsessive fan, who later commits suicide. However, Aqua pieces together that the fan must have had his and Ruby's father as an accomplice and thus resolves to enter the acting world to find and kill his father.</span>
+                </li>
+                <li class="card">
+                    <div class="img"><img src="https://m.media-amazon.com/images/I/81uZRLD4+rL._SY679_.jpg" alt="img"><a href="https://animesuge.to/anime/kaguya-sama-love-is-war-5pvv/ep-1"></a></div>
+                    <h2>Kaguya-Sama Love Is War</h2>
+                    <span>In the senior high school division of Shuchiin Academy, student council president Miyuki Shirogane and vice president Kaguya Shinomiya appear to be a perfect match. Kaguya is the daughter of a wealthy conglomerate family, and Miyuki is the top student at the school and well-known across the prefecture. Although they like each other, they are too proud to confess their love, as they believe whoever does so first would "lose" in their relationship. The story follows their many schemes to make the other one confess or at least show signs of affection.</span>
+                </li>
+                <li class="card">
+                    <div class="img"><img src="https://m.media-amazon.com/images/M/MV5BZmQzNTdjYjctYzM5OS00ZjFmLWJjYmYtZDYwZGYyYjkwODRhXkEyXkFqcGdeQXVyMTQ3MjMyMTYz._V1_.jpg" alt="img"><a href="https://animesuge.to/anime/komi-cant-communicate-kwoow/ep-1"></a></div>
+                    <h2>Komi Can't Communicate</h2>
+                    <span>On her first day attending the elite Itan Private High School, Shoko Komi immediately receives an overwhelming surge in popularity due to the unprecedented stoic beauty and refined elegance her classmates perceive her to possess. However, only Hitohito Tadano, an exceedingly average schoolboy who sits next to her, discovers that behind her bishōjo appearance, Komi has a severe communication disorder. Tadano learns that Komi's goal is to make 100 friends, and resolves to help her reach her goal</span>
+                </li>
+                <li class="card">
+                    <div class="img"><img src="https://m.media-amazon.com/images/I/71qXUpuVToL._SL1500_.jpg" alt="img"><a href="https://animesuge.to/anime/my-teen-romantic-comedy-snafu-j83/ep-1"></a></div>
+                    <h2>Oregairu</h2>
+                    <span>The story follows two loners, the pragmatic Hachiman Hikigaya and beautiful Yukino Yukinoshita, who despite their varying personalities and ideals, offers help and advice to others as part of their school's Service Club, assisted by the cheerful and friendly Yui Yuigahama. It largely depicts various social situations faced by teens in a high school setting and the psychology driving their interactions.</span>
+                </li>
+                <li class="card">
+                    <div class="img"><img src="https://image.tmdb.org/t/p/original/4Ui3cGu8gB2XUEaiuUZMdNm4TQu.jpg" alt="img"><a href="https://animesuge.to/anime/bakemonogatari-579/ep-1"></a></div>
+                    <h2>Monogatari Series</h2>
+                    <span>The Monogatari series revolves around Koyomi Araragi, a third-year high school student who has almost restored his humanity after briefly becoming a vampire during spring break. One day, a classmate of his, the reclusive Hitagi Senjōgahara, falls down a flight of stairs at school into Koyomi's arms. To his surprise, he discovers that Hitagi weighs almost nothing, in defiance of physics. Despite being threatened to keep away, Koyomi offers his help and introduces her to Meme Oshino, a strange middle-aged man living in an abandoned cram school who helped reverse his vampirism. Once Koyomi helps solve Hitagi's problem, she decides to become his girlfriend.</span>
+                </li>
+                <li class="card">
+                    <div class="img"><img src="https://m.media-amazon.com/images/M/MV5BMzNmYzNkZjAtNGIyMS00NWVmLTljMGYtZTkxNjk5MWM3NDk5XkEyXkFqcGdeQXVyMTA3OTEyODI1._V1_FMjpg_UX1000_.jpg" alt="img"><a href="https://animesuge.to/anime/pandorahearts-jv2n/ep-1"></a></div>
+                    <h2>Pandora Hearts</h2>
+                    <span>The story follows Oz Vessalius, the 15-year old heir to the house of Vessalius. During his coming-of-age ceremony is set upon by strangers who condemn him for the sin of being alive and banish him into the depths of Abyss, an otherworldly dimension.</span>
+                </li>
+                <li class="card">
+                    <div class="img"><img src="https://images-cdn.ubuy.co.in/7J87FLMG-your-lie-in-april-poster-arima-kousei.jpg" alt="img"><a href="https://animesuge.to/anime/your-lie-in-april-7w6/ep-1"></a></div>
+                    <h2>Your Lie In April</h2>
+                    <span>A piano prodigy who lost his ability to play after suffering a traumatic event in his childhood is forced back into the spotlight by an eccentric girl with a secret of her own.</span>
+                </li>
+            </ul>
+        </div>
+    </div>
+    <script>
+        const wrapper = document.querySelector(".wrapper");
+const carousel = document.querySelector(".carousel");
+const firstCardWidth = carousel.querySelector(".card").offsetWidth;
+const arrowBtns = document.querySelectorAll(".wrapper i");
+const carouselChildrens = [...carousel.children];
+let isDragging = false, isAutoPlay = true, startX, startScrollLeft, timeoutId;
+// Get the number of cards that can fit in the carousel at once
+let cardPerView = Math.round(carousel.offsetWidth / firstCardWidth);
+// Insert copies of the last few cards to beginning of carousel for infinite scrolling
+carouselChildrens.slice(-cardPerView).reverse().forEach(card => {
+    carousel.insertAdjacentHTML("afterbegin", card.outerHTML);
+});
+// Insert copies of the first few cards to end of carousel for infinite scrolling
+carouselChildrens.slice(0, cardPerView).forEach(card => {
+    carousel.insertAdjacentHTML("beforeend", card.outerHTML);
+});
+// Scroll the carousel at appropriate postition to hide first few duplicate cards on Firefox
+carousel.classList.add("no-transition");
+carousel.scrollLeft = carousel.offsetWidth;
+carousel.classList.remove("no-transition");
+// Add event listeners for the arrow buttons to scroll the carousel left and right
+arrowBtns.forEach(btn => {
+    btn.addEventListener("click", () => {
+        carousel.scrollLeft += btn.id == "left" ? -firstCardWidth : firstCardWidth;
+    });
+});
+const dragStart = (e) => {
+    isDragging = true;
+    carousel.classList.add("dragging");
+    // Records the initial cursor and scroll position of the carousel
+    startX = e.pageX;
+    startScrollLeft = carousel.scrollLeft;
+}
+const dragging = (e) => {
+    if(!isDragging) return; // if isDragging is false return from here
+    // Updates the scroll position of the carousel based on the cursor movement
+    carousel.scrollLeft = startScrollLeft - (e.pageX - startX);
+}
+const dragStop = () => {
+    isDragging = false;
+    carousel.classList.remove("dragging");
+}
+const infiniteScroll = () => {
+    // If the carousel is at the beginning, scroll to the end
+    if(carousel.scrollLeft === 0) {
+        carousel.classList.add("no-transition");
+        carousel.scrollLeft = carousel.scrollWidth - (2 * carousel.offsetWidth);
+        carousel.classList.remove("no-transition");
+    }
+    // If the carousel is at the end, scroll to the beginning
+    else if(Math.ceil(carousel.scrollLeft) === carousel.scrollWidth - carousel.offsetWidth) {
+        carousel.classList.add("no-transition");
+        carousel.scrollLeft = carousel.offsetWidth;
+        carousel.classList.remove("no-transition");
+    }
+    // Clear existing timeout & start autoplay if mouse is not hovering over carousel
+    clearTimeout(timeoutId);
+    if(!wrapper.matches(":hover")) autoPlay();
+}
+const autoPlay = () => {
+    if(window.innerWidth < 800 || !isAutoPlay) return; // Return if window is smaller than 800 or isAutoPlay is false
+    // Autoplay the carousel after every 2500 ms
+    timeoutId = setTimeout(() => carousel.scrollLeft += firstCardWidth, 2500);
+}
+autoPlay();
+carousel.addEventListener("mousedown", dragStart);
+carousel.addEventListener("mousemove", dragging);
+document.addEventListener("mouseup", dragStop);
+carousel.addEventListener("scroll", infiniteScroll);
+wrapper.addEventListener("mouseenter", () => clearTimeout(timeoutId));
+wrapper.addEventListener("mouseleave", autoPlay);
+    </script>
+</body>
+</html>
